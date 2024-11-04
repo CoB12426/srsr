@@ -85,7 +85,7 @@ def _get_pics_in_subfolder(path, ext='.jpg'):
 
 
 class ARDataLoader2(data.Dataset):
-    def __init__(self, path, patch_size, crf, eval=False, train_pct=0.8, use_ar=True, dataset_upscale_factor=2,
+    def __init__(self, path, patch_size, crf, eval=False, train_pct=0.8, use_ar=True, dataset_upscale_factor=4,
                  rescale_factor=None):
         """
         Custom dataloader for the training phase. The getitem method will return a couple (x, y), where x is the

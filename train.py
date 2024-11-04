@@ -60,8 +60,8 @@ if __name__ == '__main__':
     lpips_alex.to(device)
     critic.to(device)
 
-    dataset_train = dl.ARDataLoader2(path=str(args.DATASET_DIR),crf=crf, patch_size=96, eval=False, use_ar=True)
-    dataset_test = dl.ARDataLoader2(path=str(args.DATASET_DIR),crf=crf, patch_size=96, eval=True, use_ar=True)
+    dataset_train = dl.ARDataLoader2(path=str(args.DATASET_DIR),crf=crf, patch_size=48, eval=False, use_ar=True)
+    dataset_test = dl.ARDataLoader2(path=str(args.DATASET_DIR),crf=crf, patch_size=48, eval=True, use_ar=True)
 
     print(f"Training dataset size: {len(dataset_train)}")
     print(f"Test dataset size: {len(dataset_test)}")

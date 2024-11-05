@@ -168,9 +168,10 @@ if __name__ == '__main__':
             lpips_mean = np.array(lpips_validation).mean()
 
             print(f"Val SSIM: {ssim_mean}, Val LPIPS: {lpips_mean}")
-            torch.save(model.state_dict(),
-                       f'{args.EXPORT_DIR}/epoch{e}.pkl'.format(arch_name, e, ssim_mean, lpips_mean,
-                                                                                 args.CRF))
+            if (e + 1) % 10 == 0:
+                torch.save(model.state_dict(),
+                        f'{args.EXPORT_DIR}/epoch{e+1}.pth'.format(arch_name, e, ssim_mean, lpips_mean,
+                                                                                    args.CRF))
 
             # having critic's weights saved was not useful, better sparing storage!＠
             # torch.save(critic.state_dict(), 'critic_gan_{}.pkl'.format(e + starting_epoch))

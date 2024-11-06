@@ -171,7 +171,7 @@ if __name__ == '__main__':
             print(f"Val SSIM: {ssim_mean}, Val LPIPS: {lpips_mean}")
             if (e + 1) % 10 == 0:
                 torch.save(model.state_dict(),
-                        f'{args.EXPORT_DIR}/epoch{e+1}.pth'.format(arch_name, e, ssim_mean, lpips_mean,
+                        f'{args.EXPORT_DIR}/epoch{e+1}.pkl'.format(arch_name, e, ssim_mean, lpips_mean,
                                                                                     args.CRF))
 
             # having critic's weights saved was not useful, better sparing storage!＠

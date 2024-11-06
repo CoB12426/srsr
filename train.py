@@ -79,6 +79,7 @@ if __name__ == '__main__':
 
     # setting loss weights
     w0, w1, l0 = args.W0, args.W1, args.L0
+    #デフォルトではW0=1.0, W1=1.0, L0=0.001
 
     for e in range(n_epochs):
 
